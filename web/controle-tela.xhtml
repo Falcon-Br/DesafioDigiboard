@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:decorate xmlns="http://www.w3.org/1999/xhtml"
+             xmlns:h="http://xmlns.jcp.org/jsf/html"
+             xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+             template="template.xhtml"
+             xmlns:p="http://primefaces.org/ui">
+
+    <!-- Todos os items que estivem abaixo serão renderizados na tag 
+    "ui:insert" em tempalte.xhtml-->
+    <h1>Bem vindo ao Sistema!</h1>
+
+    <h:form>
+        <p:commandButton value="Mudar para Inserir" update="@form" action="#{usuarioBean.mudarParaInsere()}"></p:commandButton>
+        <p:commandButton value="Mudar para Editar" update="@form" action="#{usuarioBean.mudarParaEdita()}"></p:commandButton>
+        <p:commandButton value="Mudar para Busca" update="@form" action="#{usuarioBean.mudarParaBusca()}"></p:commandButton>
+
+        <br/>
+        
+        <h:outputText value="Inserir" rendered="#{usuarioBean.insere == true}"></h:outputText>
+        <h:outputText value="Editar" rendered="#{usuarioBean.edita == true}"></h:outputText>
+        <h:outputText value="Buscar" rendered="#{usuarioBean.busca == true}"></h:outputText>
+
+    </h:form>
+
+</ui:decorate>
+
